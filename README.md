@@ -1,6 +1,9 @@
 # node-mailer
 API para envio de emails.
 
+
+Utiliza express-brute com Redis em produção e um default em desenvolvimento.
+
 pm2 start npm --name node-mailer -- run api
 
 ### .env example:
