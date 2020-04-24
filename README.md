@@ -17,13 +17,16 @@ PORT=3000
 {
   "targets": [
     {
-      "name": "yourTarget",
+      "target": "yourTarget",
+      "name": "Your Site",
+      "to": "email@email.com.br, email2@email.com.br",
       "host": "",
-      "port": 587,
+      "port": 0,
       "secure": false,
-      "user": "",
+      "user": "user@yourdomain.com",
       "pass": ""
     }
   ]
 }
+
 ```
