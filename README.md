@@ -3,7 +3,7 @@ API para envio de emails.
 
 ### .env example:
 ```
-NODE_ENV=production
+NODE_ENV=development
 PORT=3000
 ```
 
