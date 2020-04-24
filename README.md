@@ -1,6 +1,8 @@
 # node-mailer
 API para envio de emails.
 
+pm2 start npm --name node-mailer -- run api
+
 ### .env example:
 ```
 NODE_ENV=development
