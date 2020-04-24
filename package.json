@@ -1,0 +1,33 @@
+{
+  "name": "node-mailer",
+  "version": "1.0.0",
+  "description": "API para envio de emails.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-brute": "^1.0.1",
+    "express-brute-redis": "0.0.1",
+    "nodemailer": "^6.4.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "scripts": {
+    "apiD": "nodemon app.js ",
+    "api": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilo900/node-mailer.git"
+  },
+  "author": "Danilo Canalle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilo900/node-mailer/issues"
+  },
+  "homepage": "https://github.com/danilo900/node-mailer#readme"
+}
