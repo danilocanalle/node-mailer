@@ -1,11 +1,14 @@
 # node-mailer
 API para envio de emails.
 
-.env example:
+### .env example:
+```
 NODE_ENV=production
 PORT=3000
+```
 
-targets.json example:
+### targets.json example:
+```
 {
   "targets": [
     {
@@ -18,3 +21,4 @@ targets.json example:
     }
   ]
 }
+```
