@@ -37,14 +37,14 @@ const bruteforce = new ExpressBrute(store, {
 
 const app = express();
 app.use(bodyParser.json({ limit: "2mb", extended: true }));
-app.use(cors())
+app.use(cors());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,POST");
   next();
 });
 
-async function sendMail(target, subject, html) {
+async function sendMail(target, subject, html, to) {
   const transporter = nodemailer.createTransport({
     host: target.host,
     port: target.port,
@@ -57,7 +57,7 @@ async function sendMail(target, subject, html) {
 
   const info = await transporter.sendMail({
     from: `"${target.name}" <${target.user}>`, // sender address
-    to: target.to,// list of receivers, , ,
+    to: to || target.to, // list of receivers, , ,
     subject, // Subject line
     // text: "Hello world?", // plain text body
     html, // html body
@@ -73,7 +73,7 @@ app.get("/", bruteforce.prevent, (req, res) => {
 app.post("/send", bruteforce.prevent, async (req, res) => {
   console.log(req.body);
 
-  const { target, subject, html } = req.body;
+  const { target, subject, html, to } = req.body;
 
   if (!target || !subject || !html) {
     return res.status(500).json({ status: "Invalid request" });
@@ -85,7 +85,7 @@ app.post("/send", bruteforce.prevent, async (req, res) => {
     return res.status(500).json({ status: "Invalid target" });
   }
 
-  const mail = await sendMail(getTarget, subject, html);
+  const mail = await sendMail(getTarget, subject, html, to);
 
   return res.status(200).json({ mail });
 });
