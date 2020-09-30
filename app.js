@@ -56,7 +56,7 @@ async function sendMail(target, subject, html, to) {
   });
 
   const info = await transporter.sendMail({
-    from: `"${target.name}" <${target.user}>`, // sender address
+    from: `"${target.name}" <${target.from ? target.from : target.user}>`, // sender address
     to: to || target.to, // list of receivers, , ,
     subject, // Subject line
     // text: "Hello world?", // plain text body
