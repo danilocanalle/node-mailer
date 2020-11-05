@@ -92,3 +92,6 @@ app.post("/send", bruteforce.prevent, async (req, res) => {
 
 console.log(`Node Mailer listening port ${port}`);
 app.listen(port);
+
+
+console.log('teste hook');
